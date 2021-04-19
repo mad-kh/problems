@@ -1,0 +1,163 @@
+
+ALGORITHM Problem_1
+VAR
+set1:ARRAY _of integer [N1];
+set2:ARRAY_of integer [N2];
+sum:integer:=0;
+i,j:integer;
+
+BEGIN
+
+write (" give the lengths of the two tables");
+read(N1);
+red(N2);
+FOR i FROM 0 to N1-1 DO
+write ("the elements of set1");
+read(set[i]);
+END_FOR
+
+FOR j FROM 0 to N2-1 DO 
+write ("the elemnts of set2");
+read(set2[j]);
+END_FOR
+
+i:=0;
+repeat
+
+FOR j FROM 0 to N2-1 DO 
+if set1[i]<>set2[j]then
+sum:=sum+set[i];
+write (set[i],",");
+END_FOR
+ i:=i+1;
+until (i>=N2-1 or i>N1-1)
+
+ write(sum);
+write (set[i],",");
+
+END.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ALGORITHM Problem_1
+
+VAR
+   
+   htab : HASH_TABLE<integer,integer>;
+  
+   set1 : ARRAY_of integer[N1];
+
+   set2 : ARRAY_of integer[N2];
+   i,count : INTEGER;
+   sum:integer:=0;
+BEGIN
+read(N1);
+read(N2);
+
+For i FROM 0 to N1-1 DO
+   Read(set1[i]);
+END_FOR
+FOR j FROM 0 to N2-1 DO
+read (set2[j]) ;
+END_FOR
+
+   
+i:=0;
+repeat
+FOR j FROM 0 to N2-1 DO
+       IF (htab.lookup(set1[i]) <>set2[j]) THEN
+           sum:=sum+ htab.get(set1[i]);
+           htab.insert(set1[i],sum);
+END_IF
+      
+END_FOR
+i:=i+1;
+UNTIL(i>=N2-1 or i>=N1-1)
+write (htab.insert(set1[i],sum);
+END.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ALGORITHM Problem_2
+
+VAR
+   
+   htab : HASH_TABLE<INTEGER,integer>;
+BEGIN
+
+ALGORITHM first_non_repeated_char
+VAR
+  
+   set1 : ARRAY_of integer[N1];
+
+   set2 : ARRAY_of integer[N2];
+   i,count : INTEGER;
+   sum:integer:=0;
+BEGIN
+read(N1);
+read(N2);
+For i FROM 0 to N1-1 DO
+   Read(set1[i]);
+END_FOR
+FOR j FROM 0 to N2-1 DO
+read (set2[j]) ;
+END_FOR
+
+   
+i:=0;
+j:=0;
+repeat
+       IF (htab.lookup(set1[i]) = set2[j]) THEN
+           sum:=sum+ htab.get(set1[i]);
+           htab.insert(set1[i],sum);
+END_IF
+       ELSE if  htab.lookup(set1[i]<>set2[j]) then
+          j:j+1;
+       END_ELSE_IF
+until (j>=N1-1 or j>=N2-1)
+
+i:=i+1;
+
+END.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ALGORITHM Problem_2
+
+
+VAR
+  
+   set1 : ARRAY_of integer[N1];
+
+   set2 : ARRAY_of integer[N2];
+   i,count : INTEGER;
+   sum:integer:=0;
+BEGIN
+read(N1);
+read(N2);
+For i FROM 0 to N1-1 DO
+   Read(set1[i]);
+END_FOR
+FOR j FROM 0 to N2-1 DO
+read (set2[j]) ;
+END_FOR
+
+   
+i:=0;
+j:=0;
+repeat
+       set1[i]) = set2[j] THEN
+           sum:=sum+ htab.get(set1[i]);
+           write(sum);
+write(set1[i],",")
+END_IF
+       ELSE if  htab.lookup(set1[i]<>set2[j]) then
+          j:j+1;
+       END_ELSE_IF
+
+
+until (j>=N2-1 or j>=N1-1)
+
+i:=i+1;
+END.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
